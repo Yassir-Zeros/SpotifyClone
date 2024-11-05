@@ -1,0 +1,15 @@
+[
+    {
+      "id": "1",
+      "name": "Fake Artist 1",
+      "genre": "Rock",
+      "albums": ["1"]
+    },
+    {
+      "id": "2",
+      "name": "Fake Artist 2",
+      "genre": "Pop",
+      "albums": ["2"]
+    }
+  ]
+  

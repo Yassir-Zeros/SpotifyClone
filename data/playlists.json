@@ -1,0 +1,13 @@
+[
+    {
+      "id": "p1",
+      "name": "My Favorite Tracks",
+      "tracks": ["t1", "t2"]
+    },
+    {
+      "id": "p2",
+      "name": "Chill Vibes",
+      "tracks": []
+    }
+  ]
+  

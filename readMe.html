@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone Backend API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Spotify Clone Backend API</h1>
+
+<p>This backend API provides a simple way to manage a Spotify-like application. It includes endpoints for managing artists, albums, tracks, playlists, and users. Below is the documentation for all available API endpoints.</p>
+
+<h2>Base URL</h2>
+<pre><code>http://localhost:3000</code></pre>
+
+<h2>Endpoints</h2>
+
+<h3>Artists</h3>
+
+<h4>1. Get All Artists</h4>
+<p><strong>GET</strong> <code>/artists</code></p>
+<p><strong>Response:</strong></p>
+<pre><code>[
+  {
+    "id": "a1",
+    "name": "Artist Name"
+  },
+  ...
+]</code></pre>
+
+<h4>2. Get Artist by ID</h4>
+<p><strong>GET</strong> <code>/artists/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the artist</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "a1",
+  "name": "Artist Name"
+}</code></pre>
+
+<h4>3. Create a New Artist</h4>
+<p><strong>POST</strong> <code>/artists</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "name": "New Artist Name"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "a2",
+  "name": "New Artist Name"
+}</code></pre>
+
+<h4>4. Update Artist by ID</h4>
+<p><strong>PUT</strong> <code>/artists/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the artist</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "name": "Updated Artist Name"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "a1",
+  "name": "Updated Artist Name"
+}</code></pre>
+
+<h4>5. Delete Artist by ID</h4>
+<p><strong>DELETE</strong> <code>/artists/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the artist</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "a1",
+  "name": "Artist Name"
+}</code></pre>
+
+<hr>
+
+<h3>Albums</h3>
+
+<h4>1. Get All Albums</h4>
+<p><strong>GET</strong> <code>/albums</code></p>
+<p><strong>Response:</strong></p>
+<pre><code>[
+  {
+    "id": "al1",
+    "title": "Album Title",
+    "artistId": "a1"
+  },
+  ...
+]</code></pre>
+
+<h4>2. Get Album by ID</h4>
+<p><strong>GET</strong> <code>/albums/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the album</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "al1",
+  "title": "Album Title",
+  "artistId": "a1"
+}</code></pre>
+
+<h4>3. Create a New Album</h4>
+<p><strong>POST</strong> <code>/albums</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "title": "New Album Title",
+  "artistId": "a1"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "al2",
+  "title": "New Album Title",
+  "artistId": "a1"
+}</code></pre>
+
+<h4>4. Update Album by ID</h4>
+<p><strong>PUT</strong> <code>/albums/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the album</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "title": "Updated Album Title"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "al1",
+  "title": "Updated Album Title",
+  "artistId": "a1"
+}</code></pre>
+
+<h4>5. Delete Album by ID</h4>
+<p><strong>DELETE</strong> <code>/albums/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the album</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "al1",
+  "title": "Album Title",
+  "artistId": "a1"
+}</code></pre>
+
+<hr>
+
+<h3>Tracks</h3>
+
+<h4>1. Get All Tracks</h4>
+<p><strong>GET</strong> <code>/tracks</code></p>
+<p><strong>Response:</strong></p>
+<pre><code>[
+  {
+    "id": "t1",
+    "title": "Track Title",
+    "albumId": "al1",
+    "artistId": "a1"
+  },
+  ...
+]</code></pre>
+
+<h4>2. Get Track by ID</h4>
+<p><strong>GET</strong> <code>/tracks/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the track</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "t1",
+  "title": "Track Title",
+  "albumId": "al1",
+  "artistId": "a1"
+}</code></pre>
+
+<h4>3. Create a New Track</h4>
+<p><strong>POST</strong> <code>/tracks</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "title": "New Track Title",
+  "albumId": "al1",
+  "artistId": "a1"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "t2",
+  "title": "New Track Title",
+  "albumId": "al1",
+  "artistId": "a1"
+}</code></pre>
+
+<h4>4. Update Track by ID</h4>
+<p><strong>PUT</strong> <code>/tracks/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the track</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "title": "Updated Track Title"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "t1",
+  "title": "Updated Track Title",
+  "albumId": "al1",
+  "artistId": "a1"
+}</code></pre>
+
+<h4>5. Delete Track by ID</h4>
+<p><strong>DELETE</strong> <code>/tracks/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the track</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "t1",
+  "title": "Track Title",
+  "albumId": "al1",
+  "artistId": "a1"
+}</code></pre>
+
+<hr>
+
+<h3>Playlists</h3>
+
+<h4>1. Get All Playlists</h4>
+<p><strong>GET</strong> <code>/playlists</code></p>
+<p><strong>Response:</strong></p>
+<pre><code>[
+  {
+    "id": "p1",
+    "name": "Playlist Name",
+    "userId": "u1"
+  },
+  ...
+]</code></pre>
+
+<h4>2. Get Playlist by ID</h4>
+<p><strong>GET</strong> <code>/playlists/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the playlist</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "p1",
+  "name": "Playlist Name",
+  "userId": "u1"
+}</code></pre>
+
+<h4>3. Create a New Playlist</h4>
+<p><strong>POST</strong> <code>/playlists</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "name": "New Playlist Name",
+  "userId": "u1"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "p2",
+  "name": "New Playlist Name",
+  "userId": "u1"
+}</code></pre>
+
+<h4>4. Update Playlist by ID</h4>
+<p><strong>PUT</strong> <code>/playlists/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the playlist</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "name": "Updated Playlist Name"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "p1",
+  "name": "Updated Playlist Name",
+  "userId": "u1"
+}</code></pre>
+
+<h4>5. Delete Playlist by ID</h4>
+<p><strong>DELETE</strong> <code>/playlists/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the playlist</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "p1",
+  "name": "Playlist Name",
+  "userId": "u1"
+}</code></pre>
+
+<hr>
+
+<h3>Users</h3>
+
+<h4>1. Get All Users</h4>
+<p><strong>GET</strong> <code>/users</code></p>
+<p><strong>Response:</strong></p>
+<pre><code>[
+  {
+    "id": "u1",
+    "username": "User Name"
+  },
+  ...
+]</code></pre>
+
+<h4>2. Get User by ID</h4>
+<p><strong>GET</strong> <code>/users/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the user</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "u1",
+  "username": "User Name"
+}</code></pre>
+
+<h4>3. Create a New User</h4>
+<p><strong>POST</strong> <code>/users</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "username": "New User"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "u2",
+  "username": "New User"
+}</code></pre>
+
+<h4>4. Update User by ID</h4>
+<p><strong>PUT</strong> <code>/users/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the user</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "username": "Updated User Name"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "u1",
+  "username": "Updated User Name"
+}</code></pre>
+
+<h4>5. Delete User by ID</h4>
+<p><strong>DELETE</strong> <code>/users/:id</code></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+    <li><code>id</code>: The ID of the user</li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre><code>{
+  "id": "u1",
+  "username": "User Name"
+}</code></pre>
+
+<h2>Conclusion</h2>
+<p>This API provides essential endpoints to interact with a Spotify-like application, allowing users to manage artists, albums, tracks, playlists, and users efficiently.</p>
+
+</body>
+</html>

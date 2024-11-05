@@ -1,0 +1,23 @@
+[
+    {
+      "id": "1",
+      "name": "Fake Album 1",
+      "artist": "Fake Artist 1",
+      "release_date": "2024-01-01",
+      "tracks": [
+        { "id": "t1", "name": "Track 1", "duration": "3:45" },
+        { "id": "t2", "name": "Track 2", "duration": "4:00" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Fake Album 2",
+      "artist": "Fake Artist 2",
+      "release_date": "2024-02-15",
+      "tracks": [
+        { "id": "t3", "name": "Track 3", "duration": "3:30" },
+        { "id": "t4", "name": "Track 4", "duration": "4:15" }
+      ]
+    }
+  ]
+  
